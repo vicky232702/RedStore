@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <style>
+        body{
+            border-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row-mt-5">
+            <div class="col-md-4 mt-5 mx-auto shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+
+                {% if errmsg %}
+                <div class="alert alert-danger" role="alert">
+                    {{errmsg}}
+                </div>
+                {% endif %}
+
+
+                <h1 class="text-center"> login Here </h1>
+                <form method="POST" action="">
+                 {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label">Name</label>
+                        <input type="email" name="lname"class="form-control" id="Input1" placeholder="Enter Your Name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="Input2" class="form-label">Password</label>
+                        <input type="Password" name="lpass"class="form-control" id="Input2" placeholder="Enter Your Password">
+                      </div>
+                      
+                      <div class="mb-3"  >
+                        <center><input type="submit" class="btn btn-success" value="login"></center>
+                        <center><a href="/register">New Here?</a></center>
+                      </div>
+                      
+                    
+                </form>
+
+            </div>
+        </div>
+            
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="static/js/popper.js
+    "></script>
+</body>
+</html>
